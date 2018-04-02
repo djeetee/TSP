@@ -31,7 +31,7 @@ class City {
     
     // returns city description and its coordinates
     func description() -> String {
-        let desc = "\(name): \(longitude), \(latitude)"
+        let desc = "\(name): (\(longitude), \(latitude))"
         return desc
     }
     
