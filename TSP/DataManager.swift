@@ -14,8 +14,8 @@ class DataManager {
         
     }
     
-    func readDataset(from: String, entries: Int, random: Bool = true) -> [City] {
-        
-    }
+//    func readDataset(from: String, entries: Int, random: Bool = true) -> [City] {
+//        
+//    }
     
 }
