@@ -14,13 +14,13 @@ class Population {
     
     
     // builds a population from 2 parents
-    init(fromParentA adam: [City],
-         andParentB eve: [City],
+    init(fromParentA adam: Tour,
+         andParentB eve: Tour,
          andSize size: Int,
          withCrossOver xOver: Double,
          withMutation mutation: Double) {
         
-        if adam.count == eve.count {
+        if adam.size() == eve.size() {
             self.popCount = size
             
             // creates child Tours and builds the population
@@ -35,20 +35,20 @@ class Population {
     
     // from two parents, create a child applying the crossover and mutation rates
     // each parent is an array of cities
-    func makeChildTourFrom(fromParentA adam: [City],
-                           andParentB eve: [City],
+    func makeChildTourFrom(fromParentA adam: Tour,
+                           andParentB eve: Tour,
                            withCrossOver xOver: Double,
                            withMutation mutation: Double) -> Tour {
         var child: Tour
         
         // number of genes to inherit from adam or eve
-        let numOfCrossoverGenes = Int(xOver * Double(adam.count))
+        let numOfCrossoverGenes = Int(xOver * Double(adam.size()))
         
         // number of mutations to execute
-        let numOfMutations = Int(mutation * Double(adam.count))
+        let numOfMutations = Int(mutation * Double(adam.size()))
         
         // get the starting point of the crossover genes bundle
-        let start = Int(arc4random_uniform(UInt32(adam.count - numOfCrossoverGenes)))
+        let start = Int(arc4random_uniform(UInt32(adam.size() - numOfCrossoverGenes)))
         
         // grab the crossover genes bundle from either adam or eve
         

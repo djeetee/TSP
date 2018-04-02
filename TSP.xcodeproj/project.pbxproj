@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		082EFF7020708EDE002A0BF3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082EFF6F20708EDE002A0BF3 /* DataManager.swift */; };
+		08833E6D207252D600E563B9 /* GADelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833E6C207252D600E563B9 /* GADelegateProtocol.swift */; };
 		08A2122B206FB15000D73B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2122A206FB15000D73B24 /* AppDelegate.swift */; };
 		08A2122D206FB15000D73B24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2122C206FB15000D73B24 /* ViewController.swift */; };
 		08A21230206FB15000D73B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A2122E206FB15000D73B24 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		082EFF6F20708EDE002A0BF3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		08833E6C207252D600E563B9 /* GADelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADelegateProtocol.swift; sourceTree = "<group>"; };
 		08A21227206FB15000D73B24 /* TSP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A2122A206FB15000D73B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08A2122C206FB15000D73B24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				08A2124C206FB86100D73B24 /* GA Globals.swift */,
 				08A212542070513900D73B24 /* UtiltyFunctions.swift */,
 				082EFF6F20708EDE002A0BF3 /* DataManager.swift */,
+				08833E6C207252D600E563B9 /* GADelegateProtocol.swift */,
 			);
 			path = TSP;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				08A2124B206FB18E00D73B24 /* City.swift in Sources */,
 				08A2124F206FB98E00D73B24 /* Population.swift in Sources */,
 				082EFF7020708EDE002A0BF3 /* DataManager.swift in Sources */,
+				08833E6D207252D600E563B9 /* GADelegateProtocol.swift in Sources */,
 				08A21253206FBEED00D73B24 /* GA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

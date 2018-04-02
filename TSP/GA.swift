@@ -8,16 +8,19 @@
 
 import Foundation
 
+
 class GA {
     var population: Population?
-    var citizen0, citizen1: [City]
+    var citizen0, citizen1: Tour
     var popSize: Int
     var crossoverRate: Double
     var mutationRate: Double
     
+    var delegate: GADelegate?
     
-    init(withCitizen0 citizen0: [City],
-         andCitizen1 citizen1: [City],
+    
+    init(withCitizen0 citizen0: Tour,
+         andCitizen1 citizen1: Tour,
          withPopulationSize popSize: Int = 100,
          withCrossOver crossoverRate: Double = 0.50,
          withMutation mutationRate: Double = 0.10) {
@@ -29,7 +32,7 @@ class GA {
         self.mutationRate = mutationRate
     }
     
-    func run(epochs: Int = 100, updateEvery: Int = 10) {
+    func run(epochs: Int = 100, updateEvery: Int = 5) {
  
         // create the first population
         var pop = Population(fromParentA: citizen0,
@@ -40,7 +43,7 @@ class GA {
         
         var parentA, parentB: Tour
         
-        for _ in 0..<epochs {
+        for epochNumber in 0..<epochs {
             // get the best two performing parents
             (parentA, parentB) = pop.getTopPerformers()
             
@@ -53,15 +56,17 @@ class GA {
             
             // add a new init to Population passing the 2 best parents
             // from the previous population instead of regenerate()?
-            if epochs % updateEvery == 0 {
-                // uddate the display
-                
+            if epochNumber % updateEvery == 0 {
+                // uddate the controller
+                if let del = delegate { // make sure the delegate property was set
+                    del.controller(didFinishEpoch: epochNumber,
+                                   topParents: (parentA, parentB))
+                }
             }
-            // next epoch
-        }
+            
+        }   // next epoch
 
     }
-    
 
     
 }
