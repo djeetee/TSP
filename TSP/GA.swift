@@ -10,7 +10,6 @@ import Foundation
 
 
 class GA {
-    var population: Population?
     var citizen0, citizen1: Tour
     var popSize: Int
     var crossoverRate: Double
@@ -33,29 +32,27 @@ class GA {
     }
     
     func run(epochs: Int = 100, updateEvery: Int = 5) {
- 
-        // create the first population
-        var pop = Population(fromParentA: citizen0,
-                             andParentB: citizen1,
+        var parentA, parentB: Tour
+        
+        // Starting with the proverbial adam and eve (citizen0 and citizen1)
+        (parentA, parentB) = (citizen0, citizen1)
+        
+        // run the algorithm and poke the caller every now and then (updateEvery)
+        for epochNumber in 0..<epochs {
+            // create a new population from these parents
+            let pop = Population(fromParentA: parentA,
+                             andParentB: parentB,
                              andSize: popSize,
                              withCrossOver: crossoverRate,
                              withMutation: mutationRate)
-        
-        var parentA, parentB: Tour
-        
-        for epochNumber in 0..<epochs {
+            
             // get the best two performing parents
             (parentA, parentB) = pop.getTopPerformers()
             
             // print their details
-            print(parentA)
-            print(parentB)
+            print(parentA.description())
+            print(parentB.description())
             
-            // create a new population from these parents
-            // pop = Population()
-            
-            // add a new init to Population passing the 2 best parents
-            // from the previous population instead of regenerate()?
             if epochNumber % updateEvery == 0 {
                 // uddate the controller
                 if let del = delegate { // make sure the delegate property was set
@@ -63,10 +60,7 @@ class GA {
                                    topParents: (parentA, parentB))
                 }
             }
-            
         }   // next epoch
-
     }
-
     
 }
