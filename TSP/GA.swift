@@ -56,7 +56,7 @@ class GA {
             if epochNumber % updateEvery == 0 {
                 // uddate the controller
                 if let del = delegate { // make sure the delegate property was set
-                    del.controller(didFinishEpoch: epochNumber,
+                    del.updade(didFinishEpoch: epochNumber,
                                    topParents: (parentA, parentB))
                 }
             }

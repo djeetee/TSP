@@ -9,5 +9,5 @@
 import Foundation
 
 protocol GADelegate {
-    func controller(didFinishEpoch: Int, topParents: (Tour, Tour))
+    func update(didFinishEpoch: Int, topParents: (Tour, Tour))
 }
