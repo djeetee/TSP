@@ -39,7 +39,8 @@ class Population {
                            andParentB eve: Tour,
                            withCrossOver xOver: Double,
                            withMutation mutation: Double) -> Tour {
-        var child: Tour
+        //var child: Tour
+        var child = Tour(withCities: adam.cities)   // TODO: delete this line
         
         // number of genes to inherit from adam or eve
         let numOfCrossoverGenes = Int(xOver * Double(adam.size()))
