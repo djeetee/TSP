@@ -35,7 +35,7 @@ class Population {
     
     // from two parents, create a child applying the crossover and mutation rates
     // each parent is an array of cities
-    func makeChildTourFrom(fromParentA adam: Tour,
+    func makeChildTour(fromParentA adam: Tour,
                            andParentB eve: Tour,
                            withCrossOver xOver: Double,
                            withMutation mutation: Double) -> Tour {
