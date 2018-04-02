@@ -25,7 +25,7 @@ class Population {
             
             // creates child Tours and builds the population
             for _ in 0..<size {
-                cityTours.append(makeChildTourFrom(fromParentA: adam,
+                cityTours.append(makeChildTour(fromParentA: adam,
                                                    andParentB: eve,
                                                    withCrossOver: xOver,
                                                    withMutation: mutation))
