@@ -21,6 +21,29 @@ class TSPTests: XCTestCase {
         super.tearDown()
     }
     
+    func testGAInit() {
+        let cityA = City(cityName: "Toronto", cityLongitude: 43.645471, citylatitude: -79.380567)
+        let cityB = City(cityName: "Montreal", cityLongitude: 52.636372, citylatitude: -92.986532)
+        let cityC = City(cityName: "Vancouver", cityLongitude: 44.673527, citylatitude: 66.821027)
+        
+        var cities = [City]()
+        cities.append(cityA)
+        cities.append(cityB)
+        cities.append(cityC)
+        
+        let tour1 = Tour(withCities: cities)
+        
+        let ga = GA(withCitizen0: tour1, andCitizen1: tour1, withPopulationSize: 6, withCrossOver: 0.5, withMutation: 0.1)
+        
+        XCTAssert(ga != nil, "GA returned nil")
+        
+        cities.remove(at: 0)
+        let tour2 = Tour(withCities: cities)
+        let ga1 = GA(withCitizen0: tour1, andCitizen1: tour2, withPopulationSize: 6, withCrossOver: 0.5, withMutation: 0.1)
+
+        XCTAssert(ga1 != nil, "GA returned nil")
+    }
+    
     func testCityInit() {
         let cityName = "Toronto"
         let cityLong = 43.645471

@@ -18,11 +18,14 @@ class GA {
     var delegate: GADelegate?
     
     
-    init(withCitizen0 citizen0: Tour,
+    init?(withCitizen0 citizen0: Tour,
          andCitizen1 citizen1: Tour,
          withPopulationSize popSize: Int = 100,
          withCrossOver crossoverRate: Double = 0.50,
          withMutation mutationRate: Double = 0.10) {
+        
+        guard factorial(of: citizen0.size()) >= popSize else { return nil }
+        guard citizen0.size() == citizen1.size() else { return nil }
         
         self.citizen0 = citizen0
         self.citizen1 = citizen1

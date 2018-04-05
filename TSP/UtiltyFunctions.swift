@@ -23,3 +23,12 @@ func shuffleArray<T>(array: [T]) -> [T] {
     return shuffled
 }
 
+
+func factorial(of n: Int) -> Int{
+    if n > 1 {
+        return n * factorial(of: n - 1)
+    }
+    else {
+        return n
+    }
+}
