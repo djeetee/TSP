@@ -77,14 +77,14 @@ class Population {
         // used to track the j position in the otherParent and avoid rescanning
         // the otherParent's gene from index 0 whic will lead to dulicates in the
         // child's genome
-        var lastPos: Int = 0
+        var lastJPos: Int = 0
       
         // step 1: copy the before xover genes
         for i in 0..<start {
-            for j in lastPos..<otherParent.size() {
+            for j in lastJPos..<otherParent.size() {
                 if !xOverGenesIDs.contains(otherParent.cities[j].name) {
                     emptyChildCityArray[i] = otherParent.cities[j]
-                    lastPos = j + 1
+                    lastJPos = j + 1
                     break
                 }
             }
@@ -92,10 +92,10 @@ class Population {
         
         // step 2: copy the after xover genes
         for i in start+numOfCrossoverGenes..<otherParent.size() {
-            for j in lastPos..<otherParent.size() {
+            for j in lastJPos..<otherParent.size() {
                 if !xOverGenesIDs.contains(otherParent.cities[j].name) {
                     emptyChildCityArray[i] = otherParent.cities[j]
-                    lastPos = j + 1
+                    lastJPos = j + 1
                     break
                 }
             }
