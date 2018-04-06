@@ -19,6 +19,10 @@ class City {
         latitude = citylatitude
     }
     
+    // TODO: replace the simple calculation below to use the haversine calculation
+    // see: http://www.movable-type.co.uk/scripts/latlong.html
+    // the included haversine.swift file contains the code
+    
     // calculates the distance to a given city
     func distanceTo(city: City) -> Double {
         let longDistance = abs(longitude - city.longitude)
