@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Population.makeChildTour(fromParentA:andParentB:withCrossOver:withMutation:):Population.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "otherParent.cities[j].name">
+            </PersistentString>
+            <PersistentString
+               value = "start+numOfCrossoverGenes">
+            </PersistentString>
+            <PersistentString
+               value = "otherParent.size()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -48,9 +48,10 @@ class GA {
                              andSize: popSize,
                              withCrossOver: crossoverRate,
                              withMutation: mutationRate)
+            guard pop != nil else { break }
             
             // get the best two performing parents
-            (parentA, parentB) = pop.getTopPerformers()
+            (parentA, parentB) = pop!.getTopPerformers()
             
             // print their details
             print(parentA.description())

@@ -14,21 +14,23 @@ class Population {
     
     
     // builds a population from 2 parents
-    init(fromParentA adam: Tour,
+    init?(fromParentA adam: Tour,
          andParentB eve: Tour,
          andSize size: Int,
          withCrossOver xOver: Double,
          withMutation mutation: Double) {
         
-        if adam.size() == eve.size() {
-            self.popCount = size
-            
-            // creates child Tours and builds the population
-            for _ in 0..<size {
-                cityTours.append(makeChildTour(fromParentA: adam,
-                                                   andParentB: eve,
-                                                   withCrossOver: xOver,
-                                                   withMutation: mutation))
+        guard adam.size() == eve.size() else { return nil }
+        
+        self.popCount = size
+        
+        // creates child Tours and builds the population
+        for _ in 0..<size {
+            if let childTour = makeChildTour(fromParentA: adam,
+                                             andParentB: eve,
+                                             withCrossOver: xOver,
+                                             withMutation: mutation) {
+                cityTours.append(childTour)
             }
         }
     }
@@ -38,9 +40,15 @@ class Population {
     func makeChildTour(fromParentA adam: Tour,
                            andParentB eve: Tour,
                            withCrossOver xOver: Double,
-                           withMutation mutation: Double) -> Tour {
-        //var child: Tour
-        var child = Tour(withCities: adam.cities)   // TODO: delete this line
+                           withMutation mutation: Double) -> Tour? {
+        
+        guard adam.size() == eve.size() else { return nil }
+        
+        // prepare a placeholder for the child's genes
+        var emptyChildCityArray = [City?](repeating: nil, count: adam.size())
+        
+        // placeholder for the xover genes
+        var xOverGenes = [City]()
         
         // number of genes to inherit from adam or eve
         let numOfCrossoverGenes = Int(xOver * Double(adam.size()))
@@ -49,16 +57,57 @@ class Population {
         let numOfMutations = Int(mutation * Double(adam.size()))
         
         // get the starting point of the crossover genes bundle
-        let start = Int(arc4random_uniform(UInt32(adam.size() - numOfCrossoverGenes)))
+        let start = Int(arc4random_uniform(UInt32(adam.size() - numOfCrossoverGenes + 1)))
         
         // grab the crossover genes bundle from either adam or eve
+        // we're tossing a coing and picking adam if we get 0, eve if we get 1
+        let (xOverParent, otherParent) = arc4random_uniform(2) == 0 ? (adam, eve) : (eve, adam)
+        
+        // copy the xover genes to the exact positions in the child's genome
+        for i in start..<start+numOfCrossoverGenes {
+            emptyChildCityArray[i] = xOverParent.cities[i]
+            xOverGenes.append(xOverParent.cities[i])
+        }
+        
+        // save the names of the cities to conserve some cpu cycles later on
+        let xOverGenesIDs = xOverGenes.map({ $0.name })
         
         // transfer the remaining genes (avoiding duplicates) from the other parent
         
+        // used to track the j position in the otherParent and avoid rescanning
+        // the otherParent's gene from index 0 whic will lead to dulicates in the
+        // child's genome
+        var lastPos: Int = 0
+      
+        // step 1: copy the before xover genes
+        for i in 0..<start {
+            for j in lastPos..<otherParent.size() {
+                if !xOverGenesIDs.contains(otherParent.cities[j].name) {
+                    emptyChildCityArray[i] = otherParent.cities[j]
+                    lastPos = j + 1
+                    break
+                }
+            }
+        }
+        
+        // step 2: copy the after xover genes
+        for i in start+numOfCrossoverGenes..<otherParent.size() {
+            for j in lastPos..<otherParent.size() {
+                if !xOverGenesIDs.contains(otherParent.cities[j].name) {
+                    emptyChildCityArray[i] = otherParent.cities[j]
+                    lastPos = j + 1
+                    break
+                }
+            }
+        }
+        
+        
+        // TODO: ----------
         // mutate (swap) genes based on the number of mutations
+
         
         // the child is born!
-        
+        let child = Tour(withCities: emptyChildCityArray as! [City])
         return child
     }
     
@@ -77,7 +126,7 @@ class Population {
         var desc = ""
         
         for tour in cityTours {
-            desc += tour.description() + "\\r\\n"
+            desc += tour.description() + "\r\n"
         }
         return desc
     }
