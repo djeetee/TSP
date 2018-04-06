@@ -10,12 +10,12 @@ import Foundation
 
 
 class GA {
-    var citizen0, citizen1: Tour
-    var popSize: Int
-    var crossoverRate: Double
+    var citizen0, citizen1: Tour    // the original sinners :)
+    var popSize: Int                // how many indivuduals the pop will hold
+    var crossoverRate: Double       //
     var mutationRate: Double
     
-    var delegate: GADelegate?
+    var delegate: GADelegate?   // the parent caller which will handle the display of GA's progress
     
     
     init?(withCitizen0 citizen0: Tour,
@@ -24,9 +24,13 @@ class GA {
          withCrossOver crossoverRate: Double = 0.50,
          withMutation mutationRate: Double = 0.10) {
         
+        // no point in creating a population with a size < factorial(numberOfGenes)
         guard factorial(of: citizen0.size()) >= popSize else { return nil }
+        
+        // safety valve
         guard citizen0.size() == citizen1.size() else { return nil }
         
+        // set the member variables
         self.citizen0 = citizen0
         self.citizen1 = citizen1
         self.popSize = popSize
@@ -48,6 +52,7 @@ class GA {
                              andSize: popSize,
                              withCrossOver: crossoverRate,
                              withMutation: mutationRate)
+            
             guard pop != nil else { break }
             
             // get the best two performing parents
