@@ -8,8 +8,8 @@
 
 import Foundation
 
-fileprivate let dataFileURL = "http://localhost/TSP/WorldCities-CA.csv"
-
+fileprivate let dataFileName = "WorldCities-CA"
+fileprivate let dataFileExt = "csv"
 
 class DataManager {
     var dataTable = [City]()
@@ -24,7 +24,7 @@ class DataManager {
         var pickedCities = [City]()
         
         
-        let rawDataset = readFileFromURL(stringURL: dataFileURL)
+        let rawDataset = readDataFile() 
         let fullDataset = convertFromCSV(data: rawDataset!)
         
         // let's randomly pick the required number of cities
@@ -34,7 +34,7 @@ class DataManager {
         // first build an arrays of unique indices
         for i in 0..<entries {
             while true {
-                index = Int(arc4random_uniform(UInt32(dataTable.count)))
+                index = Int(arc4random_uniform(UInt32(fullDataset.count)))
                 if !randNumArray.contains(index) {
                     randNumArray.insert(index, at: i)
                     break
@@ -51,19 +51,17 @@ class DataManager {
     }
     
     
-    func readFileFromURL(stringURL: String)-> String? {
-        if let url = NSURL(string: stringURL) {
-            do {
-                return try String(contentsOf: url as URL, encoding: .utf8)
-            } catch {
-                print("Error loading remote file")
-                return nil
-            }
-        } else {
-            print("Invalid string URL")
+    func readDataFile()-> String? {
+
+        guard let filepath = Bundle.main.path(forResource: dataFileName, ofType: dataFileExt)
+            else { return nil }
+    
+        do {
+            let rawContent = try String(contentsOfFile: filepath, encoding: .utf8)
+            return rawContent
+        } catch {
             return nil
         }
-        
     }
     
     func convertFromCSV(data: String) -> [City] {
@@ -71,20 +69,16 @@ class DataManager {
         
         let fileContent = cleanRawData(file: data)
         
-        print(fileContent)
-        
         let rows = fileContent.components(separatedBy: "\n")
-        print(rows[0])
         
         for row in rows {
             guard row.count > 1 else { break }
             
             let columns = row.components(separatedBy: ",")
-            print(columns.count)
 
-            let city = City(cityName: columns[1],
-                            cityLatitude: Double(columns[2])!,
-                            cityLongitude: Double(columns[3])!)
+            let city = City(cityName: columns[0],
+                            cityLatitude: Double(columns[1])!,
+                            cityLongitude: Double(columns[2])!)
              
             result.append(city)
         }

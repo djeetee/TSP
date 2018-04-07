@@ -27,10 +27,18 @@ class TSPTests: XCTestCase {
         
         let cities = dm.dataTable
         
-        //XCTAssert(cities != nil, "Dataset is nil.")
         
         XCTAssert(cities.count == 20, "Dataset is not 20 elements long.")
         
+        let parentA = Tour(withCities: cities)
+        let parentB = Tour(withCities: cities)
+        
+        let pop = Population(fromParentA: parentA, andParentB: parentB, andSize: 100, withCrossOver: 0.5, withMutation: 0.1)
+        
+        XCTAssert(pop != nil, "pop is nil")
+        
+        XCTAssert(pop?.size() == 100, "pop size is not 25")
+
     }
     
     func testPopulation() {
@@ -144,7 +152,7 @@ class TSPTests: XCTestCase {
         let cityLat = -79.380567
         
         let city = City(cityName: cityName, cityLatitude: cityLong, cityLongitude: cityLat)
-        XCTAssertTrue(city.name == cityName, "City Name is \(city.description())")
+        XCTAssert(city.name == cityName, "City Name is \(city.description())")
     }
     
     func testCalculateDistance() {
@@ -169,10 +177,10 @@ class TSPTests: XCTestCase {
         cities.append(cityA)
         cities.append(cityB)
         cities.append(cityC)
-        XCTAssertTrue(cities.count == 3, "cities has \(cities[0].name + ", " + cities[1].name + ", " + cities[2].name)")
+        XCTAssert(cities.count == 3, "cities has \(cities[0].name + ", " + cities[1].name + ", " + cities[2].name)")
         
         let tour = Tour(withCities: cities)
-        XCTAssertTrue(tour.size() == 3, "Tour has \(tour.size()) cities and they are \(tour.description())")
+        XCTAssert(tour.size() == 3, "Tour has \(tour.size()) cities and they are \(tour.description())")
         
     }
     func testExample() {
