@@ -13,10 +13,10 @@ class City {
     var longitude: Double
     var latitude: Double
     
-    init(cityName: String, cityLongitude: Double, citylatitude: Double) {
+    init(cityName: String, cityLatitude: Double, cityLongitude: Double) {
         name = cityName
+        latitude = cityLatitude
         longitude = cityLongitude
-        latitude = citylatitude
     }
     
     // TODO: replace the simple calculation below to use the haversine calculation

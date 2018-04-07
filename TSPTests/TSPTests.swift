@@ -21,28 +21,40 @@ class TSPTests: XCTestCase {
         super.tearDown()
     }
     
+    
+    func testDataManager() {
+        let dm = DataManager(entries: 20)
+        
+        let cities = dm.dataTable
+        
+        //XCTAssert(cities != nil, "Dataset is nil.")
+        
+        XCTAssert(cities.count == 20, "Dataset is not 20 elements long.")
+        
+    }
+    
     func testPopulation() {
-        let cityA = City(cityName: "Toronto", cityLongitude: 43.645471, citylatitude: -79.380567)
-        let cityB = City(cityName: "Montreal", cityLongitude: 52.636372, citylatitude: -92.986532)
-        let cityC = City(cityName: "Vancouver", cityLongitude: 44.673527, citylatitude: 66.821027)
-        let cityD = City(cityName: "Sydney", cityLongitude: 43.645471, citylatitude: -79.380567)
-        let cityE = City(cityName: "Tokyo", cityLongitude: 52.636372, citylatitude: -92.986532)
-        let cityF = City(cityName: "Hong Kong", cityLongitude: 44.673527, citylatitude: 66.821027)
-        let cityG = City(cityName: "Beirut", cityLongitude: 43.645471, citylatitude: -79.380567)
-        let cityH = City(cityName: "Paris", cityLongitude: 52.636372, citylatitude: -92.986532)
-        let cityI = City(cityName: "Madrid", cityLongitude: 44.673527, citylatitude: 66.821027)
-        let cityJ = City(cityName: "Bordeaux", cityLongitude: 43.645471, citylatitude: -79.380567)
-        let cityK = City(cityName: "Munich", cityLongitude: 52.636372, citylatitude: -92.986532)
-        let cityL = City(cityName: "London", cityLongitude: 44.673527, citylatitude: 66.821027)
-        let cityM = City(cityName: "New York", cityLongitude: 43.645471, citylatitude: -79.380567)
-        let cityN = City(cityName: "Boston", cityLongitude: 52.636372, citylatitude: -92.986532)
-        let cityO = City(cityName: "Chicago", cityLongitude: 44.673527, citylatitude: 66.821027)
-        let cityP = City(cityName: "Los Angeles", cityLongitude: 43.645471, citylatitude: -79.380567)
-        let cityQ = City(cityName: "San Diego", cityLongitude: 52.636372, citylatitude: -92.986532)
-        let cityR = City(cityName: "Las Vegas", cityLongitude: 44.673527, citylatitude: 66.821027)
-        let cityS = City(cityName: "Miami", cityLongitude: 43.645471, citylatitude: -79.380567)
-        let cityT = City(cityName: "Seatle", cityLongitude: 52.636372, citylatitude: -92.986532)
-        let cityU = City(cityName: "Austin", cityLongitude: 44.673527, citylatitude: 66.821027)
+        let cityA = City(cityName: "Toronto", cityLatitude: -79.380567, cityLongitude: 43.645471 )
+        let cityB = City(cityName: "Montreal", cityLatitude: 52.636372, cityLongitude: -92.986532)
+        let cityC = City(cityName: "Vancouver", cityLatitude: 44.673527, cityLongitude: 66.821027)
+        let cityD = City(cityName: "Sydney", cityLatitude: 43.645471, cityLongitude: -79.380567)
+        let cityE = City(cityName: "Tokyo", cityLatitude: 52.636372, cityLongitude: -92.986532)
+        let cityF = City(cityName: "Hong Kong", cityLatitude: 44.673527, cityLongitude: 66.821027)
+        let cityG = City(cityName: "Beirut", cityLatitude: 43.645471, cityLongitude: -79.380567)
+        let cityH = City(cityName: "Paris", cityLatitude: 52.636372, cityLongitude: -92.986532)
+        let cityI = City(cityName: "Madrid", cityLatitude: 44.673527, cityLongitude: 66.821027)
+        let cityJ = City(cityName: "Bordeaux", cityLatitude: 43.645471, cityLongitude: -79.380567)
+        let cityK = City(cityName: "Munich", cityLatitude: 52.636372, cityLongitude: -92.986532)
+        let cityL = City(cityName: "London", cityLatitude: 44.673527, cityLongitude: 66.821027)
+        let cityM = City(cityName: "New York", cityLatitude: 43.645471, cityLongitude: -79.380567)
+        let cityN = City(cityName: "Boston", cityLatitude: 52.636372, cityLongitude: -92.986532)
+        let cityO = City(cityName: "Chicago", cityLatitude: 44.673527, cityLongitude: 66.821027)
+        let cityP = City(cityName: "Los Angeles", cityLatitude: 43.645471, cityLongitude: -79.380567)
+        let cityQ = City(cityName: "San Diego", cityLatitude: 52.636372, cityLongitude: -92.986532)
+        let cityR = City(cityName: "Las Vegas", cityLatitude: 44.673527, cityLongitude: 66.821027)
+        let cityS = City(cityName: "Miami", cityLatitude: 43.645471, cityLongitude: -79.380567)
+        let cityT = City(cityName: "Seatle", cityLatitude: 52.636372, cityLongitude: -92.986532)
+        let cityU = City(cityName: "Austin", cityLatitude: 44.673527, cityLongitude: 66.821027)
         
         var citiesA = [City]()
         citiesA.append(cityA)
@@ -104,9 +116,9 @@ class TSPTests: XCTestCase {
     
     
     func testGAInit() {
-        let cityA = City(cityName: "Toronto", cityLongitude: 43.645471, citylatitude: -79.380567)
-        let cityB = City(cityName: "Montreal", cityLongitude: 52.636372, citylatitude: -92.986532)
-        let cityC = City(cityName: "Vancouver", cityLongitude: 44.673527, citylatitude: 66.821027)
+        let cityA = City(cityName: "Toronto", cityLatitude: 43.645471, cityLongitude: -79.380567)
+        let cityB = City(cityName: "Montreal", cityLatitude: 52.636372, cityLongitude: -92.986532)
+        let cityC = City(cityName: "Vancouver", cityLatitude: 44.673527, cityLongitude: 66.821027)
         
         var cities = [City]()
         cities.append(cityA)
@@ -131,13 +143,13 @@ class TSPTests: XCTestCase {
         let cityLong = 43.645471
         let cityLat = -79.380567
         
-        let city = City(cityName: cityName, cityLongitude: cityLong, citylatitude: cityLat)
+        let city = City(cityName: cityName, cityLatitude: cityLong, cityLongitude: cityLat)
         XCTAssertTrue(city.name == cityName, "City Name is \(city.description())")
     }
     
     func testCalculateDistance() {
-        let cityA = City(cityName: "Toronto", cityLongitude: 43.645471, citylatitude: -79.380567)
-        let cityB = City(cityName: "Montreal", cityLongitude: 52.636372, citylatitude: -92.986532)
+        let cityA = City(cityName: "Toronto", cityLatitude: 43.645471, cityLongitude: -79.380567)
+        let cityB = City(cityName: "Montreal", cityLatitude: 52.636372, cityLongitude: -92.986532)
 
         let longDistance = abs(cityA.longitude - cityB.longitude)
         let latDistance = abs(cityA.latitude - cityB.latitude)
@@ -149,9 +161,9 @@ class TSPTests: XCTestCase {
     
     
     func testTourInit() {
-        let cityA = City(cityName: "Toronto", cityLongitude: 43.645471, citylatitude: -79.380567)
-        let cityB = City(cityName: "Montreal", cityLongitude: 52.636372, citylatitude: -92.986532)
-        let cityC = City(cityName: "Vancouver", cityLongitude: 44.673527, citylatitude: 66.821027)
+        let cityA = City(cityName: "Toronto", cityLatitude: 43.645471, cityLongitude: -79.380567)
+        let cityB = City(cityName: "Montreal", cityLatitude: 52.636372, cityLongitude: -92.986532)
+        let cityC = City(cityName: "Vancouver", cityLatitude: 44.673527, cityLongitude: 66.821027)
         
         var cities = [City]()
         cities.append(cityA)
