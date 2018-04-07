@@ -57,11 +57,7 @@ class GA {
             
             // get the best two performing parents
             (parentA, parentB) = pop!.getTopPerformers()
-            
-            // print their details
-            print(parentA.description())
-            print(parentB.description())
-            
+             
             if epochNumber % updateEvery == 0 {
                 // uddate the controller
                 if let del = delegate { // make sure the delegate property was set

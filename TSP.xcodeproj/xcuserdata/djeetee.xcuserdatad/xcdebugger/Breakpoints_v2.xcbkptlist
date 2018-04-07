@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TSP/Population.swift"
-            timestampString = "544753055.976321"
+            timestampString = "544830976.5100091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TSP/Population.swift"
-            timestampString = "544753055.9763941"
+            timestampString = "544830976.510482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TSP/Population.swift"
-            timestampString = "544753055.97645"
+            timestampString = "544830976.510759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TSP/Population.swift"
-            timestampString = "544753055.976504"
+            timestampString = "544830976.511055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -73,13 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TSP/DataManager.swift"
-            timestampString = "544800076.5515831"
+            filePath = "TSP/ViewController.swift"
+            timestampString = "544830976.511407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "readDataset(entries:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "update(didFinishEpoch:topParents:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,13 +89,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TSP/DataManager.swift"
-            timestampString = "544800076.551668"
+            filePath = "TSP/ViewController.swift"
+            timestampString = "544830976.511528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "readDataFile()"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "runIt()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,13 +105,76 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TSP/DataManager.swift"
-            timestampString = "544800076.551733"
+            filePath = "TSP/GA.swift"
+            timestampString = "544830976.5116349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "readDataset(entries:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "run(epochs:updateEvery:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 0 of TSP.GA.run(epochs: Swift.Int, updateEvery: Swift.Int) -&gt; ()"
+                  moduleName = "TSP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/djeetee/Documents/GitHub/Personal/TSP/TSP/GA.swift"
+                  timestampString = "544830977.080681"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 1 of TSP.GA.run(epochs: Swift.Int, updateEvery: Swift.Int) -&gt; ()"
+                  moduleName = "TSP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/djeetee/Documents/GitHub/Personal/TSP/TSP/GA.swift"
+                  timestampString = "544830977.082656"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TSP.GA.run(epochs: Swift.Int, updateEvery: Swift.Int) -&gt; ()"
+                  moduleName = "TSP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/djeetee/Documents/GitHub/Personal/TSP/TSP/GA.swift"
+                  timestampString = "544830977.084286"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "42">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TSP/GA.swift"
+            timestampString = "544830976.511721"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "run(epochs:updateEvery:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,13 +184,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TSP/DataManager.swift"
-            timestampString = "544800076.551796"
+            filePath = "TSP/GA.swift"
+            timestampString = "544830976.511816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "readDataset(entries:)"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "run(epochs:updateEvery:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -137,13 +200,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TSP/DataManager.swift"
-            timestampString = "544800076.551857"
+            filePath = "TSP/GA.swift"
+            timestampString = "544830976.511883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "run(epochs:updateEvery:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TSP/GA.swift"
+            timestampString = "544830976.511942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "readDataset(entries:)"
+            landmarkName = "run(epochs:updateEvery:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -153,13 +232,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TSP/DataManager.swift"
-            timestampString = "544800076.551914"
+            filePath = "TSP/Population.swift"
+            timestampString = "544830976.511997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "convertFromCSV(data:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "init(fromParentA:andParentB:andSize:withCrossOver:withMutation:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TSP/Population.swift"
+            timestampString = "544831143.030504"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "makeChildTour(fromParentA:andParentB:withCrossOver:withMutation:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

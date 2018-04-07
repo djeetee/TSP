@@ -181,8 +181,8 @@ class TSPTests: XCTestCase {
         
         let tour = Tour(withCities: cities)
         XCTAssert(tour.size() == 3, "Tour has \(tour.size()) cities and they are \(tour.description())")
-        
     }
+    
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
