@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		082C88D22077DBB40039915F /* Haversine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C88D12077DBB40039915F /* Haversine.swift */; };
 		082EFF7020708EDE002A0BF3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082EFF6F20708EDE002A0BF3 /* DataManager.swift */; };
 		08833E6D207252D600E563B9 /* GADelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833E6C207252D600E563B9 /* GADelegateProtocol.swift */; };
 		08A2122B206FB15000D73B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2122A206FB15000D73B24 /* AppDelegate.swift */; };
@@ -36,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		082C88D12077DBB40039915F /* Haversine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haversine.swift; sourceTree = "<group>"; };
 		082EFF6F20708EDE002A0BF3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		08833E6C207252D600E563B9 /* GADelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADelegateProtocol.swift; sourceTree = "<group>"; };
 		08A21227206FB15000D73B24 /* TSP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +107,6 @@
 				08A212542070513900D73B24 /* UtiltyFunctions.swift */,
 				082EFF6F20708EDE002A0BF3 /* DataManager.swift */,
 				08833E6C207252D600E563B9 /* GADelegateProtocol.swift */,
-				082C88D12077DBB40039915F /* Haversine.swift */,
 				08A21231206FB15000D73B24 /* Assets.xcassets */,
 				08AF7C1D2078EB9400867E1A /* WorldCities-CA.csv */,
 				08A21236206FB15000D73B24 /* Info.plist */,
@@ -232,7 +229,6 @@
 			files = (
 				08A2122D206FB15000D73B24 /* ViewController.swift in Sources */,
 				08A2122B206FB15000D73B24 /* AppDelegate.swift in Sources */,
-				082C88D22077DBB40039915F /* Haversine.swift in Sources */,
 				08A2124D206FB86100D73B24 /* GA Globals.swift in Sources */,
 				08A21251206FBAA500D73B24 /* Tour.swift in Sources */,
 				08A212552070513900D73B24 /* UtiltyFunctions.swift in Sources */,

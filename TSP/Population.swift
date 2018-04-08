@@ -54,7 +54,7 @@ class Population {
         let numOfCrossoverGenes = Int(xOver * Double(adam.size()))
         
         // number of mutations to execute
-        let numOfMutations = Int(mutation * Double(adam.size()))
+        var numOfMutations = Int(mutation * Double(adam.size()))
         
         // get the starting point of the crossover genes bundle
         let start = Int(arc4random_uniform(UInt32(adam.size() - numOfCrossoverGenes + 1)))
@@ -72,7 +72,37 @@ class Population {
         // save the names of the cities to conserve some cpu cycles later on
         let xOverGenesIDs = xOverGenes.map({ $0.name })
         
-        // transfer the remaining genes (avoiding duplicates) from the other parent
+
+        // mutate (swap) genes based on the number of mutations
+        // the mutation should be applied to the remaining genes from the
+        // other parent (excluding the xover genes)
+        
+        var bottomBound = 0
+        var upperBound = start - 1
+        if (upperBound > bottomBound) {
+            for i in bottomBound..<(upperBound / 2) {
+                otherParent.cities.swapAt(i, upperBound - i)
+                numOfMutations -= 1
+                if numOfMutations == 0 {
+                    break
+                }
+            }
+        }
+        
+        bottomBound = start + numOfCrossoverGenes
+        upperBound = otherParent.size() - 1
+        if ((upperBound > bottomBound) && (numOfMutations > 0)) {
+            for i in bottomBound..<(((upperBound - bottomBound) / 2) + bottomBound) {
+                otherParent.cities.swapAt(i, (upperBound - i))
+                numOfMutations -= 1
+                if numOfMutations == 0 {
+                    break
+                }
+            }
+        }
+        
+        
+        // transfer the remaining (mutated) genes (avoiding duplicates) from the other parent
         
         // used to track the j position in the otherParent and avoid rescanning
         // the otherParent's gene from index 0 whic will lead to dulicates in the
@@ -101,12 +131,7 @@ class Population {
             }
         }
         
-        
-        // TODO: ----------
-        // mutate (swap) genes based on the number of mutations
-
-        
-        // the child is born!
+                // the child is born!
         let child = Tour(withCities: emptyChildCityArray as! [City])
         return child
     }

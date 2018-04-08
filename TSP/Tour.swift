@@ -27,7 +27,7 @@ class Tour {
         // calculates the fitness (total distance) of the Tour
         var totalFitness = 0.0
         for i in 0..<cities.count - 1 {
-            totalFitness += cities[i].distanceTo(city: cities[i+1])
+            totalFitness += cities[i].distance(toCity: cities[i+1])
         }
         fitness = totalFitness
     }
@@ -41,7 +41,7 @@ class Tour {
             if i == 0 { // first city?
                 tourDetails += "Fitness = \(fitness) : \(cities[i].name) "
             }
-            tourDetails += " -- \(cities[i].distanceTo(city: cities[i+1])) --> \(cities[i+1].name) "
+            tourDetails += " -- \(cities[i].distance(toCity: cities[i+1])) --> \(cities[i+1].name) "
         }
         
         return tourDetails

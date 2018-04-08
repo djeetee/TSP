@@ -19,24 +19,45 @@ class City {
         longitude = cityLongitude
     }
     
-    // TODO: replace the simple calculation below to use the haversine calculation
+    // distance is calculated using the haversine calculation
     // see: http://www.movable-type.co.uk/scripts/latlong.html
-    // the included haversine.swift file contains the code
     
     // calculates the distance to a given city
-    func distanceTo(city: City) -> Double {
-        let longDistance = abs(longitude - city.longitude)
-        let latDistance = abs(latitude - city.latitude)
+    func distance(toCity: City) -> Double {
+        let R: Double = 6371  // Radius of the earth in km
+ 
+        let lat1, lat2, lon1, lon2: Double
         
-        let distance = sqrt( (longDistance * longDistance) + (latDistance * latDistance) )
+        lat1 = toRadians(fromDeg: self.latitude)
+        lon1 = toRadians(fromDeg: self.longitude)
         
-        return distance;
+        lat2 = toRadians(fromDeg: toCity.latitude)
+        lon2 = toRadians(fromDeg: toCity.longitude)
+        
+        let dLat = lat2 - lat1
+        let dLon = lon2 - lon1
+        
+        let a =
+            sin(dLat / 2) * sin(dLat / 2) +
+                cos(lat1) * cos(lat2) *
+                sin(dLon / 2) * sin(dLon / 2)
+        
+        let c = 2 * atan2(sqrt(a), sqrt(1 - a))
+        let d = R * c   // distance in km
+        
+        return d
     }
+
     
     // returns city description and its coordinates
     func description() -> String {
         let desc = "\(name): (\(latitude),\(longitude))"
         return desc
     }
+    
+    private func toRadians(fromDeg: Double) -> Double {
+        return fromDeg * (Double.pi / 180)
+    }
+
     
 }

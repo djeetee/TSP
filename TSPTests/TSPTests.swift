@@ -164,7 +164,7 @@ class TSPTests: XCTestCase {
         
         let distance = sqrt( (longDistance * longDistance) + (latDistance * latDistance) )
 
-        XCTAssert(cityA.distanceTo(city: cityB) == distance, "cityA.distance = \(cityA.distanceTo(city: cityB)), distance = \(distance)")
+        XCTAssert(cityA.distance(toCity: cityB) == distance, "cityA.distance = \(cityA.distance(toCity: cityB)), distance = \(distance)")
     }
     
     

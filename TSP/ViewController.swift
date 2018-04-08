@@ -32,19 +32,19 @@ class ViewController: UIViewController, GADelegate {
     
         let ga = GA(withCitizen0: parentA,
                     andCitizen1: parentB,
-                    withPopulationSize: 100,
+                    withPopulationSize: 400,
                     withCrossOver: 0.5,
-                    withMutation: 0.1)
+                    withMutation: 0.4)
         
         ga?.delegate = self
         
-        ga?.run()
+        ga?.run(epochs: 400, updateEvery: 40)
     }
     
     func update(didFinishEpoch: Int, topParents: (Tour, Tour)) {
         let adam = topParents.0
         let eve = topParents.1
-        
+        print("Epoch: \(didFinishEpoch)")
         print("ADAM: \(adam.description())")
         print("EVE: \(eve.description())")
     }
