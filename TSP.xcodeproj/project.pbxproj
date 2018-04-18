@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		082EFF7020708EDE002A0BF3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082EFF6F20708EDE002A0BF3 /* DataManager.swift */; };
+		08408F2120866E5A00F4A701 /* WorldCities.csv in Resources */ = {isa = PBXBuildFile; fileRef = 08408F2020866E5A00F4A701 /* WorldCities.csv */; };
 		08833E6D207252D600E563B9 /* GADelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08833E6C207252D600E563B9 /* GADelegateProtocol.swift */; };
 		08A2122B206FB15000D73B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2122A206FB15000D73B24 /* AppDelegate.swift */; };
 		08A2122D206FB15000D73B24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A2122C206FB15000D73B24 /* ViewController.swift */; };
@@ -21,7 +22,7 @@
 		08A21251206FBAA500D73B24 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A21250206FBAA500D73B24 /* Tour.swift */; };
 		08A21253206FBEED00D73B24 /* GA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A21252206FBEED00D73B24 /* GA.swift */; };
 		08A212552070513900D73B24 /* UtiltyFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A212542070513900D73B24 /* UtiltyFunctions.swift */; };
-		08AF7C1E2078EB9400867E1A /* WorldCities-CA.csv in Resources */ = {isa = PBXBuildFile; fileRef = 08AF7C1D2078EB9400867E1A /* WorldCities-CA.csv */; };
+		75E63C311792982D59ADEB35 /* Pods_TSP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32AB682708A602EAA50E42B /* Pods_TSP.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		082EFF6F20708EDE002A0BF3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		08408F2020866E5A00F4A701 /* WorldCities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WorldCities.csv; sourceTree = "<group>"; };
 		08833E6C207252D600E563B9 /* GADelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADelegateProtocol.swift; sourceTree = "<group>"; };
 		08A21227206FB15000D73B24 /* TSP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A2122A206FB15000D73B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +55,9 @@
 		08A21250206FBAA500D73B24 /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		08A21252206FBEED00D73B24 /* GA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GA.swift; sourceTree = "<group>"; };
 		08A212542070513900D73B24 /* UtiltyFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtiltyFunctions.swift; sourceTree = "<group>"; };
-		08AF7C1D2078EB9400867E1A /* WorldCities-CA.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "WorldCities-CA.csv"; sourceTree = "<group>"; };
+		C2CA98D72EC2F468EB2B1471 /* Pods-TSP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSP.release.xcconfig"; path = "Pods/Target Support Files/Pods-TSP/Pods-TSP.release.xcconfig"; sourceTree = "<group>"; };
+		C32AB682708A602EAA50E42B /* Pods_TSP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBC4CEA8C3CF55F1CD197FDE /* Pods-TSP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TSP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TSP/Pods-TSP.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E63C311792982D59ADEB35 /* Pods_TSP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,8 @@
 				08A21229206FB15000D73B24 /* TSP */,
 				08A2123E206FB15100D73B24 /* TSPTests */,
 				08A21228206FB15000D73B24 /* Products */,
+				2FBF08C51F825796A64F1BED /* Pods */,
+				64B5E9946D976ADE30CB61F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,7 +115,7 @@
 				082EFF6F20708EDE002A0BF3 /* DataManager.swift */,
 				08833E6C207252D600E563B9 /* GADelegateProtocol.swift */,
 				08A21231206FB15000D73B24 /* Assets.xcassets */,
-				08AF7C1D2078EB9400867E1A /* WorldCities-CA.csv */,
+				08408F2020866E5A00F4A701 /* WorldCities.csv */,
 				08A21236206FB15000D73B24 /* Info.plist */,
 			);
 			path = TSP;
@@ -123,6 +130,23 @@
 			path = TSPTests;
 			sourceTree = "<group>";
 		};
+		2FBF08C51F825796A64F1BED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBC4CEA8C3CF55F1CD197FDE /* Pods-TSP.debug.xcconfig */,
+				C2CA98D72EC2F468EB2B1471 /* Pods-TSP.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		64B5E9946D976ADE30CB61F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C32AB682708A602EAA50E42B /* Pods_TSP.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08A21244206FB15100D73B24 /* Build configuration list for PBXNativeTarget "TSP" */;
 			buildPhases = (
+				67335559690F8B8EBB6AE82C /* [CP] Check Pods Manifest.lock */,
 				08A21223206FB15000D73B24 /* Sources */,
 				08A21224206FB15000D73B24 /* Frameworks */,
 				08A21225206FB15000D73B24 /* Resources */,
+				A67240B55C6C89A2101CCDF0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,7 +234,7 @@
 			files = (
 				08A21235206FB15000D73B24 /* LaunchScreen.storyboard in Resources */,
 				08A21232206FB15000D73B24 /* Assets.xcassets in Resources */,
-				08AF7C1E2078EB9400867E1A /* WorldCities-CA.csv in Resources */,
+				08408F2120866E5A00F4A701 /* WorldCities.csv in Resources */,
 				08A21230206FB15000D73B24 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +247,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		67335559690F8B8EBB6AE82C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TSP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A67240B55C6C89A2101CCDF0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TSP/Pods-TSP-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TSP/Pods-TSP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		08A21223206FB15000D73B24 /* Sources */ = {
@@ -391,6 +456,7 @@
 		};
 		08A21245206FB15100D73B24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBC4CEA8C3CF55F1CD197FDE /* Pods-TSP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -406,6 +472,7 @@
 		};
 		08A21246206FB15100D73B24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2CA98D72EC2F468EB2B1471 /* Pods-TSP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -8,7 +8,7 @@
 
 import Foundation
 
-fileprivate let dataFileName = "WorldCities-CA"
+fileprivate let dataFileName = "WorldCities"
 fileprivate let dataFileExt = "csv"
 
 class DataManager {
@@ -54,7 +54,9 @@ class DataManager {
     func readDataFile()-> String? {
 
         guard let filepath = Bundle.main.path(forResource: dataFileName, ofType: dataFileExt)
-            else { return nil }
+            else {
+                return nil
+        }
     
         do {
             let rawContent = try String(contentsOfFile: filepath, encoding: .utf8)

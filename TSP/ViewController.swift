@@ -23,23 +23,39 @@ class ViewController: UIViewController, GADelegate {
     }
 
     func runIt() {
-    
-        let dm = DataManager(entries: 20)
+        let dnaCount = 20
+        let popSize = 400
+        let xOverRate = 0.5
+        let mutationRate = 0.05
+        let epochs = 4000
+        let updateEvery = 40
+        
+        // no point in creating a population with a size < factorial(numberOfGenes)
+        guard factorial(of: Double(dnaCount)) >= Double(popSize) else {
+            print("The DNA count must be increased.")
+            return
+        }
+        
+        // grab dnaCount cities' data from the file
+        let dm = DataManager(entries: dnaCount)
         let cities = dm.dataTable
     
-        let parentA = Tour(withCities: cities)
-        let parentB = Tour(withCities: cities)
-    
-        let ga = GA(withCitizen0: parentA,
-                    andCitizen1: parentB,
-                    withPopulationSize: 400,
-                    withCrossOver: 0.5,
-                    withMutation: 0.4)
+        // init the GA
+        let ga = GA(dna: cities,
+                    withPopulationSize: popSize,
+                    withCrossOver: xOverRate,
+                    withMutation: mutationRate)
         
+        // for callback
         ga?.delegate = self
         
-        ga?.run(epochs: 400, updateEvery: 40)
+        // run it and update us
+        ga?.run(epochs: epochs, updateEvery: updateEvery)
+        
+        print("All Done!")
     }
+    
+    
     
     func update(didFinishEpoch: Int, topParents: (Tour, Tour)) {
         let adam = topParents.0

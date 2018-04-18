@@ -18,21 +18,16 @@ class GA {
     var delegate: GADelegate?   // the parent caller which will handle the display of GA's progress
     
     
-    init?(withCitizen0 citizen0: Tour,
-         andCitizen1 citizen1: Tour,
-         withPopulationSize popSize: Int = 100,
-         withCrossOver crossoverRate: Double = 0.50,
-         withMutation mutationRate: Double = 0.10) {
+    init?(dna: [City],
+          withPopulationSize popSize: Int,
+          withCrossOver crossoverRate: Double,
+          withMutation mutationRate: Double) {
         
-        // no point in creating a population with a size < factorial(numberOfGenes)
-        guard factorial(of: citizen0.size()) >= popSize else { return nil }
-        
-        // safety valve
-        guard citizen0.size() == citizen1.size() else { return nil }
         
         // set the member variables
-        self.citizen0 = citizen0
-        self.citizen1 = citizen1
+        self.citizen0 = Tour(withCities: shuffleArray(array: dna))
+        self.citizen1 = Tour(withCities: shuffleArray(array: dna))
+        
         self.popSize = popSize
         self.crossoverRate = crossoverRate
         self.mutationRate = mutationRate

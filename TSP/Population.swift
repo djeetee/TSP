@@ -140,7 +140,7 @@ class Population {
     // returns the 2 cadidate parents for the next generation
     func getTopPerformers() -> (Tour, Tour) {
         // sort the Tours in ascending order
-        let sortedTours = cityTours.sorted(by: { $0.fitness > $1.fitness} )
+        let sortedTours = cityTours.sorted(by: { $0.fitness < $1.fitness} )
         
         // return the 2 best performers
         return (sortedTours[0], sortedTours[1])
